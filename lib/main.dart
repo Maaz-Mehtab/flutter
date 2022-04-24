@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
-
-void main(){
+void main() {
   runApp(MaterialApp(
     title: "flutter App",
     home: HomePage(),
   ));
 }
 
-class HomePage  extends StatelessWidget {
+class HomePage extends StatelessWidget {
   // const ({ Key? key }) : super(key: key);
 
   @override
@@ -17,13 +17,28 @@ class HomePage  extends StatelessWidget {
       appBar: AppBar(
         title: Text("Home"),
       ),
-      body: Container(
-        child: Center(child: Text("Hello")),
+      body: Center(
+        child: Container(
+          padding: const EdgeInsets.all(5),
+          alignment: Alignment.center,
+          // color:Colors.red,
+          width: 100,
+          height: 100,
+          decoration: BoxDecoration(
+              // shape: BoxShape.circle,
+              boxShadow: [BoxShadow(color: Colors.grey, blurRadius: 5)],
+              borderRadius: BorderRadius.circular(8),
+              gradient: LinearGradient(
+                colors: [Colors.yellow, Colors.pink],
+              )),
+          child: Text(
+            "Box inside text",
+            textAlign: TextAlign.center,
+            style: TextStyle(
+                color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16),
+          ),
+        ),
       ),
     );
-    // return Container(
-    //   color: Colors.blue,
-    //   child: Text("Hi hellow"),
-    // );
   }
 }
